@@ -24,21 +24,6 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// ExampleSpec defines the desired state of Example
-type ExampleSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of Example. Edit example_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
-
-	// Bar is another exemple field
-	// +operator-sdk:csv:customresourcedefinitions:type=spec,xDescriptors={"urn:alm:descriptor:com.tectonic.ui:hidden"}
-	Bar string `json:"bar,omitempty"`
-
-	Options common.CommonOptions `json:"options"`
-}
-
 // ExampleStatus defines the observed state of Example
 type ExampleStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
@@ -53,8 +38,8 @@ type Example struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   ExampleSpec   `json:"spec,omitempty"`
-	Status ExampleStatus `json:"status,omitempty"`
+	Spec   common.ExampleSpec `json:"spec,omitempty"`
+	Status ExampleStatus      `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true

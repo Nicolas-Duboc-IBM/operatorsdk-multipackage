@@ -1,0 +1,50 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: operator-sdk-defect.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Example is the Schema for the examples API
+      displayName: Example
+      kind: Example
+      name: examples.cache.example.com
+      specDescriptors:
+      - description: Bar is another exemple field
+        displayName: Bar
+        path: bar
+        x-descriptors:
+        - urn:alm:descriptor:com.tectonic.ui:hidden
+      version: v1alpha1
+  description: Example
+  displayName: Example defect
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - defect
+  links:
+  - name: Operator Sdk Defect
+    url: https://operator-sdk-defect.domain
+  maturity: alpha
+  provider:
+    name: john
+  version: 0.0.0
